@@ -1,3 +1,4 @@
+{{-- white box with a title, whatever is inside the tag goes in $slot --}}
 @props(['title'])
 
 <section class="bg-white rounded-lg shadow mb-6">

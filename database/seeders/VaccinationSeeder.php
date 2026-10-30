@@ -9,6 +9,7 @@ class VaccinationSeeder extends Seeder
 {
     public function run(): void
     {
+        // sample residents for the dashboard
         $rows = [
             ['patient_name' => 'Baby Aliyah Mae Cabrera', 'purok' => 'Purok 2', 'vaccine' => 'BCG',
              'dose' => '1st dose', 'scheduled_at' => '2026-11-04', 'status' => 'Scheduled'],
@@ -29,6 +30,7 @@ class VaccinationSeeder extends Seeder
              'dose' => '3rd dose', 'scheduled_at' => '2026-10-15', 'status' => 'Done'],
         ];
 
+        // save each row in the database
         foreach ($rows as $row) {
             Vaccination::create($row);
         }

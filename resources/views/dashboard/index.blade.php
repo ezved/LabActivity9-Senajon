@@ -5,6 +5,7 @@
 @section('content')
     <h1 class="text-2xl md:text-3xl font-bold mb-6">{{ $title }}</h1>
 
+    {{-- alert banner: overdue first, then out of stock, else all clear --}}
     @if ($alerts->count() > 0)
         <div class="mb-6 p-4 rounded bg-red-100 border border-red-300 text-red-800">
             <strong>{{ $alerts->count() }}</strong> overdue vaccination(s) need follow-up.
@@ -19,13 +20,16 @@
         </div>
     @endif
 
+    {{-- 4 stat cards, stacked on mobile and 4 columns on md screens --}}
     <div class="grid gap-4 md:grid-cols-4 mb-6">
         @foreach ($stats as $stat)
             <x-stat-card :title="$stat['label']" :value="$stat['value']" />
         @endforeach
     </div>
 
+    {{-- list of overdue patients --}}
     <x-panel title="Needs follow-up">
+        {{-- hide the badge when nobody is overdue --}}
         @unless ($alerts->isEmpty())
             <span class="inline-block mb-3 px-2 py-1 rounded bg-red-600 text-white text-xs font-semibold">Overdue</span>
         @endunless

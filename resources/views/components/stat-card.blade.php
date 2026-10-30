@@ -1,3 +1,4 @@
+{{-- small card for one number, takes a title and a value --}}
 @props(['title', 'value'])
 
 <div class="bg-white rounded-lg shadow p-4 text-center">

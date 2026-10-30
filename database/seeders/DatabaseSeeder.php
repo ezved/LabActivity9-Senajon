@@ -10,12 +10,14 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // my login account
         User::create([
             'name' => 'Lourrence Ed',
             'email' => 'nurse.senajon@bakuna.test',
             'password' => Hash::make('bakuna2026'),
         ]);
 
+        // then add the vaccinations
         $this->call([
             VaccinationSeeder::class,
         ]);
