@@ -32,7 +32,7 @@
     </main>
 
     <footer class="bg-slate-800 text-slate-300 text-sm text-center py-4 px-4">
-        Barangay Matina Crossing Health Center, Davao City &middot; Nurse Marites Abellana
+        Davao City &middot; Nurse Marites Abellana
     </footer>
 </body>
 </html>
